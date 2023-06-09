@@ -20,10 +20,13 @@ public class Produto {
     private String descricao;
     private BigDecimal preco;
     private LocalDate dataCadastro = LocalDate.now();
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Categoria categoria;
 
 
+    public Produto() {
+
+    }
     public Produto( String nome, String descricao, BigDecimal preco, Categoria categoria) {
         this.nome = nome;
         this.descricao = descricao;
